@@ -5,6 +5,8 @@
 cepR 🇧🇷
 =======
 
+<a href=#uk>(English below)</a>
+
 A proposta de **cepR** é para disponibilizar CEPs, nomes de bairros, logradouros de todos as cidades e estados do Brasil. Os dados vem do projeto [CEPaberto](http://cepaberto.com/). Para usar este pacote, você vai ter que registrar no site do [CEPaberto](http://cepaberto.com/users/register) e usar o *token* pessoal. Este token é usado nas funções do pacote. Pode contribuir ao projeto CEPaberto através o tab "Colaborar" no site. Contribuições a este pacote estão bem vindos por meio de pull request, sugestões e críticas nos issues. Me contata se quiser ser colaborador, todos estão bem vindos (inclusive para melhorar o português ruim desse pacote 🐵).
 
 Instalação
@@ -77,3 +79,16 @@ To do:
 
 -   busca por nome da cidade;
 -   busca por nome do bairro
+
+<a name="uk">cepR</a> 🇬🇧
+========================
+
+**cepR** is a package for accessing Brazilian address data: neighbourhood names, city and state names, actual addresses, postal codes, and other info such as altitude, longitude & latitude. The data come from the [CEPaberto](http://cepaberto.com/) project, and to use the package, you'll need a personal access token from the CEP Aberto site. Suggestions, pull requests, criticisms all welcome. You can install the package as shown in *Instalação* above. A dataset of address data for the state of São Paulo comes with the package and is accessible with `data("sp")`.
+The package is aimed at a Brazilian audience, so if you don't speak Portuguese:
+
+-   bairro = neighbourhood;
+-   cep = postal code;
+-   logadouro = address;
+-   município = municipality.
+
+The others aren't too hard to figure out 🐵.

@@ -1,11 +1,11 @@
 #' @title Busca Bairros por Estado
-#' @description Busca bairros por estado.
+#' @description Busca bairros por estado (search for neighbourhoods by state).
 #' @importFrom purrr map_chr
 #' @importFrom httr GET
 #' @importFrom httr add_headers
 #' @importFrom httr content
 #' @importFrom tibble tibble
-#' @param estado sigla do estado.
+#' @param estado sigla do estado (acronym of the state).
 #' @param token Token de autorização. Veja <http://cepaberto.com/users/register>.
 #' @export
 busca_estado <- function(estado = c("AC", "AL", "AP", "AM", "BA", "CE",

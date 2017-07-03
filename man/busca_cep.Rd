@@ -7,10 +7,10 @@
 busca_cep(cep = "01001000", token = NULL)
 }
 \arguments{
-\item{cep}{CEP, como \code{character}.}
+\item{cep}{CEP (postal code), \code{character}.}
 
 \item{token}{Token de autorização. Veja <http://cepaberto.com/users/register>.}
 }
 \description{
-Busca por CEP.
+Busca por CEP (search for information by postal code).
 }

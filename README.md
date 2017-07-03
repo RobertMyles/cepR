@@ -57,6 +57,8 @@ Pode também busca por CEP. O valor default do CEP (para dar exemplo) é da Pra�
 #   cod_IBGE <chr>
 ```
 
+Pode buscar por cidade usando `busca_cidade()`.
+
 Dados
 -----
 
@@ -73,12 +75,6 @@ O pacote vem com uma base dos endereços, nome de bairros e CEP do estado de Sã
 6 01001902                  OAB - Ordem dos Advogados do Brasil., Praça da Sé, 385     Sé
 # ... with 4 more variables: id_cidade <int>, id_estado <int>, cidade <chr>, estado <chr>
 ```
-
-To do:
-------
-
--   busca por nome da cidade;
--   busca por nome do bairro
 
 <a name="uk">cepR</a> 🇬🇧
 ========================

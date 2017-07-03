@@ -11,7 +11,9 @@ NULL
 
 # global vars (rlang::.data not working)
 if(getRversion() >= "2.15.1")  utils::globalVariables(
-  c(".", "altitude", "latitude", "longitude", "setNames"))
+  c(".", "altitude", "latitude", "longitude", "setNames",
+    "estado", "cidade", "bairro", "cep", "logradouro", "ddd",
+    "cod_IBGE", "ibge"))
 
 
 

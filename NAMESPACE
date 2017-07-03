@@ -2,9 +2,11 @@
 
 export("%>%")
 export(busca_cep)
+export(busca_cidade)
 export(busca_estado)
 export(busca_latlon)
 importFrom(dplyr,mutate)
+importFrom(dplyr,select)
 importFrom(httr,GET)
 importFrom(httr,add_headers)
 importFrom(httr,content)

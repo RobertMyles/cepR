@@ -1,11 +1,11 @@
 #' @title Busca por CEP
-#' @description Busca por CEP.
+#' @description Busca por CEP (search for information by postal code).
 #' @importFrom purrr map_chr
 #' @importFrom httr GET
 #' @importFrom httr add_headers
 #' @importFrom httr content
 #' @importFrom tibble tibble
-#' @param cep CEP, como \code{character}.
+#' @param cep CEP (postal code), \code{character}.
 #' @param token Token de autorização. Veja <http://cepaberto.com/users/register>.
 #' @export
 busca_cep <- function(cep = "01001000", token = NULL){

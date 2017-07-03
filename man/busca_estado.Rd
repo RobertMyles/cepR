@@ -9,10 +9,10 @@ busca_estado(estado = c("AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO",
   "RR", "SC", "SP", "SE", "TO"), token = NULL)
 }
 \arguments{
-\item{estado}{sigla do estado.}
+\item{estado}{sigla do estado (acronym of the state).}
 
 \item{token}{Token de autorização. Veja <http://cepaberto.com/users/register>.}
 }
 \description{
-Busca bairros por estado.
+Busca bairros por estado (search for neighbourhoods by state).
 }

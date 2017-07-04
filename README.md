@@ -1,6 +1,6 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-[![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/RobertMyles/cepR?branch=master&svg=true)](https://ci.appveyor.com/project/RobertMyles/cepR) [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/cepR)](https://cran.r-project.org/package=cepR)
+[![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/RobertMyles/cepR?branch=master&svg=true)](https://ci.appveyor.com/project/RobertMyles/cepR) [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/cepR)](https://cran.r-project.org/package=cepR) [![CRAN\_Download\_Badge](http://cranlogs.r-pkg.org/badges/cepR)](https://CRAN.R-project.org/package=cepR) [![CRAN\_Download\_Badge](http://cranlogs.r-pkg.org/badges/grand-total/cepR)](https://CRAN.R-project.org/package=cepR)
 
 cepR 🇧🇷
 =======
@@ -11,6 +11,14 @@ A proposta de **cepR** é para disponibilizar CEPs, nomes de bairros, logradouro
 
 Instalação
 ----------
+
+CRAN:
+
+``` r
+install.packages("cepR")
+```
+
+GitHub:
 
 ``` r
 # install.packages("devtools")

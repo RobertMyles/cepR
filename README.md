@@ -7,7 +7,7 @@ cepR 🇧🇷
 
 <a href=#uk>(English below)</a>
 
-A proposta de **cepR** é para disponibilizar CEPs, nomes de bairros, logradouros de todos as cidades e estados do Brasil. Os dados vem do projeto [CEPaberto](http://cepaberto.com/). Para usar este pacote, você vai ter que registrar no site do [CEPaberto](http://cepaberto.com/users/register) e usar o *token* pessoal. Este token é usado nas funções do pacote. Pode contribuir ao projeto CEPaberto através o tab "Colaborar" no site. Contribuições a este pacote estão bem vindos por meio de pull request, sugestões e críticas nos issues. Me contata se quiser ser colaborador, todos estão bem vindos (inclusive para melhorar o português ruim desse pacote 🐵).
+**cepR** é um pacote para [R](https://www.r-project.org/) que acessa dados postais do Brasil tais como nomes de bairros, cidades, estados, logradouros, CEPs e outras informações de interesse como altitude, longitude e latitude. Os dados são do projeto [CEPaberto](http://cepaberto.com/) e para utilizar este pacote é preciso se cadastrar no site do [CEPaberto](http://cepaberto.com/users/register) e obter um *token* pessoal. Você pode contribuir para o projeto CEPaberto clicando na aba ["Colaborar"](http://cepaberto.com/ceps) do site. Para instalar o **cepR** é só seguir as instruções abaixo. Um banco de dados com endereços postais do estado de São Paulo está incluído no pacote e pode ser acessado com `data("sp")`. Sugestões, *pull requests* e comentários são muito bem-vindos!
 
 Instalação
 ----------
@@ -28,11 +28,11 @@ devtools::install_github("RobertMyles/cepR")
 Uso
 ---
 
-Pode achar os nomes das cidades e municipios com `busca_estado()`
+É possível buscar os nomes das cidades e municipios com `busca_estado()`
 
 ``` r
 library(cepR)
-token <- "XXXXXXXXXXX" # o seu token
+token <- "XXXXXXXXXXX" # seu token
 sp <- busca_estado(estado = "SP", token = token)
 
 sp
@@ -52,7 +52,7 @@ sp
 # ... with 853 more rows
 ```
 
-Pode também busca por CEP. O valor default do CEP (para dar exemplo) é da Praça de Sé:
+Pode-se também buscar os endereços por CEP. Por exemplo, o valor *default* do CEP é o da Praça de Sé:
 
 ``` r
 > busca_cep(token = token)
@@ -65,12 +65,12 @@ Pode também busca por CEP. O valor default do CEP (para dar exemplo) é da Pra�
 #   cod_IBGE <chr>
 ```
 
-Pode buscar por cidade usando `busca_cidade()`.
+Por fim, você pode buscar os logradouros de determinada cidade com `busca_cidade()`.
 
 Dados
 -----
 
-O pacote vem com uma base dos endereços, nome de bairros e CEP do estado de São Paulo. Para carregar, digite `data("sp")`:
+O pacote vem com uma base de dados contendo endereços, nome de bairros e CEP do estado de São Paulo. Para carregá-la, digite `data("sp")`:
 
 ``` r
        cep                                                                   local bairro

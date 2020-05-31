@@ -17,7 +17,7 @@ busca_cep <- function(cep = "01001000", token = NULL){
     stop("Um token \u00e9 preciso")
   }
 
-  url <- paste0("http://www.cepaberto.com/api/v2/ceps.json?cep=", cep)
+  url <- paste0("https://www.cepaberto.com/api/v3/cep?cep=", cep)
 
   auth <- paste0("Token token=", token)
   r <- httr::GET(url, httr::add_headers(Authorization = auth)) %>%
@@ -26,16 +26,16 @@ busca_cep <- function(cep = "01001000", token = NULL){
   N <- NA_character_
 
   CEP <- tibble::tibble(
-    estado = purrr::map_chr(r, .null = N, "estado"),
-    cidade = purrr::map_chr(r, .null = N, "cidade"),
+    estado = purrr::map_chr(r[[1]]$estado$sigla, .null = N, 1),
+    cidade = purrr::map_chr(r[[1]]$cidade$nome, .null = N, 1),
     bairro = purrr::map_chr(r, .null = N, "bairro"),
     cep = purrr::map_chr(r, .null = N, "cep"),
     logradouro = purrr::map_chr(r, .null = N, "logradouro"),
     latitude = purrr::map_chr(r, .null = N, "latitude"),
     longitude = purrr::map_chr(r, .null = N, "longitude"),
     altitude = purrr::map_chr(r, .null = N, "altitude"),
-    ddd = purrr::map_chr(r, .null = N, "ddd"),
-    cod_IBGE = purrr::map_chr(r, .null = N, "ibge")
+    ddd = purrr::map_chr(r[[1]]$cidade$ddd, .null = N, 1),
+    cod_IBGE = purrr::map_chr(r[[1]]$cidade$ibge, .null = N, 1)
   )
 
   return(CEP)

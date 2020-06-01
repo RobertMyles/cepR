@@ -4,9 +4,13 @@
 \alias{busca_estado}
 \title{Busca Bairros por Estado}
 \usage{
-busca_estado(estado = c("AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO",
-  "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO",
-  "RR", "SC", "SP", "SE", "TO"), token = NULL)
+busca_estado(
+  estado = c("AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS",
+    "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC", "SP", "SE",
+    "TO"),
+  cidade = NULL,
+  token = NULL
+)
 }
 \arguments{
 \item{estado}{sigla do estado (acronym of the state).}

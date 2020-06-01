@@ -4,7 +4,9 @@
 \name{sp}
 \alias{sp}
 \title{Base de CEP, endereços e bairros de São Paulo}
-\format{tibble de 258765 linhas, 7 colunas.}
+\format{
+tibble de 258765 linhas, 7 colunas.
+}
 \usage{
 sp
 }

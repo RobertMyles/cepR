@@ -1,11 +1,8 @@
 #' @title Busca Bairros por Latitude e Longitude
 #' @description Busca bairros por latitude e longitude.
-#' @importFrom purrr map_chr
-#' @importFrom httr GET
-#' @importFrom httr add_headers
-#' @importFrom httr content
+#' @importFrom purrr pluck
+#' @importFrom httr GET add_headers content
 #' @importFrom tibble tibble
-#' @importFrom dplyr mutate
 #' @param lat \code{numerico}. Latitude
 #' @param long \code{numerico}. Longitude.
 #' @param token Token de autorização. Veja <http://cepaberto.com/users/register>
@@ -22,32 +19,14 @@ busca_latlon <- function(lat = NULL, long = NULL, token = NULL){
   if(is.null(long)){
     stop("longitude \u00e9 preciso")
   }
-
   if(is.null(token)){
     stop("Um token \u00e9 preciso")
   }
 
-  url <- paste0("http://www.cepaberto.com/api/v2/ceps.json?lat=",
-                lat, "&lng=", long)
-
+  url <- paste0(base_url, "nearest?", "lat=", lat, "&lng=", long)
   auth <- paste0("Token token=", token)
-  r <- httr::GET(url, httr::add_headers(Authorization = auth)) %>%
-    httr::content("parsed")
+  r <- GET(url, add_headers(Authorization = auth)) %>% content("parsed")
+  latlon <- parse_api(r)
 
-  depth <- list_depth(r)
-
-  if(depth == 1){
-    r <- list(r)
-  }
-
-  df <- setNames(object = data.frame(do.call(rbind, lapply(r, as.character, unlist)),
-                                     stringsAsFactors = FALSE),
-                nm = names(r[[1]]))
-  df <- replace(df, df == "NULL", NA) %>% tibble::as.tibble()
-  df <- df %>%
-    dplyr::mutate(latitude = as.numeric(latitude),
-                  longitude = as.numeric(longitude),
-                  altitude = as.numeric(altitude))
-
-  return(df)
+  return(latlon)
 }

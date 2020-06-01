@@ -1,6 +1,6 @@
 #' @title Busca por CEP
 #' @description Busca por CEP (search for information by postal code).
-#' @importFrom purrr map_chr
+#' @importFrom purrr pluck
 #' @importFrom httr GET
 #' @importFrom httr add_headers
 #' @importFrom httr content
@@ -8,12 +8,11 @@
 #' @param cep CEP (postal code), \code{character}.
 #' @param token Token de autorização. Veja <http://cepaberto.com/users/register>.
 #' @export
-busca_cep <- function(cep = "01001000", token = NULL){
-
-  if(nchar(cep) != 8){
+busca_cep <- function(cep = "01001000", token = NULL) {
+  if (nchar(cep) != 8) {
     stop("O cep deve ter 8 digitos.")
   }
-  if(is.null(token)){
+  if (is.null(token)) {
     stop("Um token \u00e9 preciso")
   }
 
@@ -25,20 +24,21 @@ busca_cep <- function(cep = "01001000", token = NULL){
   r <- list(r)
   N <- NA_character_
 
-  CEP <- tibble::tibble(
-    estado = purrr::pluck(r, 1, "estado", .default = N) %>%
-             purrr::pluck("sigla", .default = N),
-    cidade = purrr::pluck(r, 1, "cidade", .default = N) %>%
-             purrr::pluck("nome", .default = N),
-    bairro = purrr::map_chr(r, .null = N, "bairro"),
-    cep = purrr::map_chr(r, .null = N, "cep"),
-    logradouro = purrr::map_chr(r, .null = N, "logradouro"),
-    latitude = purrr::map_chr(r, .null = N, "latitude"),
-    longitude = purrr::map_chr(r, .null = N, "longitude"),
-    altitude = purrr::map_chr(r, .null = N, "altitude"),
-    ddd = purrr::map_chr(r[[1]]$cidade$ddd, .null = N, 1),
-    cod_IBGE = purrr::pluck(r, 1, "cidade", .default = N) %>%
-               purrr::pluck("ibge", .default = N)
+  CEP <- tibble(
+    estado = pluck(r, 1, "estado", .default = N) %>%
+      pluck("sigla", .default = N),
+    cidade = pluck(r, 1, "cidade", .default = N) %>%
+      pluck("nome", .default = N),
+    bairro = pluck(r, "bairro", .default = N),
+    cep = pluck(r, "cep", .default = N),
+    logradouro = pluck(r, "logradouro", .default = N),
+    latitude = pluck(r, "latitude", .default = N),
+    longitude = pluck(r, "longitude", .default = N),
+    altitude = pluck(r, "altitude", .default = N),
+    ddd = pluck(r, 1, "cidade", .default = N) %>%
+      pluck("ddd", .default = N),
+    cod_IBGE = pluck(r, 1, "cidade", .default = N) %>%
+      pluck("ibge", .default = N)
   )
 
   return(CEP)

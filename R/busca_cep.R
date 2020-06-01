@@ -26,8 +26,10 @@ busca_cep <- function(cep = "01001000", token = NULL){
   N <- NA_character_
 
   CEP <- tibble::tibble(
-    estado = purrr::map_chr(r[[1]]$estado$sigla, .null = N, 1),
-    cidade = purrr::map_chr(r[[1]]$cidade$nome, .null = N, 1),
+    estado = purrr::pluck(r, 1, "estado", .default = N) %>%
+             purrr::pluck("sigla", .default = N),
+    cidade = purrr::pluck(r, 1, "cidade", .default = N) %>%
+             purrr::pluck("nome", .default = N),
     bairro = purrr::map_chr(r, .null = N, "bairro"),
     cep = purrr::map_chr(r, .null = N, "cep"),
     logradouro = purrr::map_chr(r, .null = N, "logradouro"),
@@ -35,7 +37,8 @@ busca_cep <- function(cep = "01001000", token = NULL){
     longitude = purrr::map_chr(r, .null = N, "longitude"),
     altitude = purrr::map_chr(r, .null = N, "altitude"),
     ddd = purrr::map_chr(r[[1]]$cidade$ddd, .null = N, 1),
-    cod_IBGE = purrr::map_chr(r[[1]]$cidade$ibge, .null = N, 1)
+    cod_IBGE = purrr::pluck(r, 1, "cidade", .default = N) %>%
+               purrr::pluck("ibge", .default = N)
   )
 
   return(CEP)

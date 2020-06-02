@@ -2,7 +2,9 @@
 base_url <- "http://www.cepaberto.com/api/v3/"
 # default value for null results in `pluck()`
 N <- NA_character_
-
+# token error message
+msg <- "Um token \u00e9 preciso"
+Encoding(msg) <- "UTF-8"
 #' Pipe operator
 #'
 #' @name %>%

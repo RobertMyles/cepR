@@ -22,7 +22,7 @@ busca_cidades <- function(estado = c("AC", "AL", "AP", "AM", "BA", "CE",
                                           "RJ", "RN", "RS", "RO", "RR", "SC",
                                           "SP", "SE", "TO"))
   if(is.null(token)){
-    stop("Um token \u00e9 preciso")
+    stop(msg)
   }
 
   url <- paste0(base_url, "cities?estado=", estado)

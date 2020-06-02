@@ -12,13 +12,13 @@
 busca_latlon <- function(lat = NULL, long = NULL, token = NULL){
 
   if(is.null(lat)){
-    stop("latitude \u00e9 preciso")
+    stop("precisa 'latitude'")
   }
   if(is.null(long)){
-    stop("longitude \u00e9 preciso")
+    stop("precisa 'longitude'")
   }
   if(is.null(token)){
-    stop("Um token \u00e9 preciso")
+    stop(msg)
   }
 
   url <- paste0(base_url, "nearest?", "lat=", lat, "&lng=", long)

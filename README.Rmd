@@ -31,8 +31,8 @@ install.packages("cepR")
 
 GitHub:  
 ```{r gh-installation, eval = FALSE}
-# install.packages("devtools")
-devtools::install_github("RobertMyles/cepR")
+# install.packages("remotes")
+remotes::install_github("RobertMyles/cepR")
 ```
 
 ## Uso
@@ -74,22 +74,7 @@ Pode-se também buscar os endereços por CEP. Por exemplo, o valor *default* do 
 #   cod_IBGE <chr>
 ```
 
-
-## Dados 
-
-O pacote vem com uma base de dados contendo endereços, nome de bairros e CEP do estado de São Paulo. Para carregá-la, digite `data("sp")`:  
-
-```{r, eval = F}
-       cep                                                                   local bairro
-     <chr>                                                                   <chr>  <chr>
-1 01001000                                                 Praça da Sé, lado ímpar     Sé
-2 01001001                                                   Praça da Sé, lado par     Sé
-3 01001010                                                  Rua Filipe de Oliveira     Sé
-4 01001900 UNESP - Universidade Estadual Júlio de Mesquita Filho, Praça da Sé, 108     Sé
-5 01001901                                  Edifício Santa Lídia, Praça da Sé, 371     Sé
-6 01001902                  OAB - Ordem dos Advogados do Brasil., Praça da Sé, 385     Sé
-# ... with 4 more variables: id_cidade <int>, id_estado <int>, cidade <chr>, estado <chr>
-```
+Para mais, veja o projeto CEPAberto.
 
 # <a name="uk">cepR</a>  `r emo::ji("uk")`  
 

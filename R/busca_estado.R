@@ -17,10 +17,10 @@ busca_estado <- function(estado = c("AC", "AL", "AP", "AM", "BA", "CE",
                                           "RJ", "RN", "RS", "RO", "RR", "SC",
                                           "SP", "SE", "TO"))
   if(is.null(cidade)){
-    stop("Uma cidade \u00e9 preciso")
+    stop("precisa 'cidade'")
   }
   if(is.null(token)){
-    stop("Um token \u00e9 preciso")
+    stop(msg)
   }
   cidade <- gsub(pattern = " ", replacement = "%20", x = cidade)
   url <- paste0(base_url, "address", "?estado=", estado, "&cidade=", cidade)

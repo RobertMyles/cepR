@@ -9,7 +9,7 @@ busca_cep <- function(cep = "01001000", token = NULL) {
     stop("O cep deve ter 8 digitos.")
   }
   if (is.null(token)) {
-    stop("Um token \u00e9 preciso")
+    stop(msg)
   }
 
   url <- paste0(base_url, "cep?cep=", cep)

@@ -1,8 +1,8 @@
-#' @title Busca Bairros por Estado
-#' @description Busca bairros por estado (search for neighbourhoods by state).
+#' @title Busca Bairros por Estado e Cidade
+#' @description Busca bairros por estado  e cidade (search for neighbourhoods by state and city).
 #' @importFrom httr GET add_headers content
-#' @importFrom tibble tibble
 #' @param estado sigla do estado (acronym of the state).
+#' @param cidade nome da cidade (city name).
 #' @param token Token de autorização. Veja <http://cepaberto.com/users/register>.
 #' @export
 busca_estado <- function(estado = c("AC", "AL", "AP", "AM", "BA", "CE",
@@ -22,8 +22,8 @@ busca_estado <- function(estado = c("AC", "AL", "AP", "AM", "BA", "CE",
   if(is.null(token)){
     stop("Um token \u00e9 preciso")
   }
-
-  url <- paste0(base_url, "nearest", "?cidade=", cidade, "&estado=", estado)
+  cidade <- gsub(pattern = " ", replacement = "%20", x = cidade)
+  url <- paste0(base_url, "address", "?estado=", estado, "&cidade=", cidade)
   auth <- paste0("Token token=", token)
   r <- GET(url, add_headers(Authorization = auth)) %>% content("parsed")
   bairros <- parse_api(r)

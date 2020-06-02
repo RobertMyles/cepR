@@ -74,7 +74,6 @@ Pode-se também buscar os endereços por CEP. Por exemplo, o valor *default* do 
 #   cod_IBGE <chr>
 ```
 
-Por fim, você pode buscar os logradouros de determinada cidade com `busca_cidade()`.  
 
 ## Dados 
 

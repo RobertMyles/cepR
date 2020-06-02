@@ -1,26 +1,20 @@
-#' @title Busca Bairros por Estado
-#' @description Busca bairros por estado.
-#' @importFrom purrr map_chr
-#' @importFrom httr GET
-#' @importFrom httr add_headers
-#' @importFrom httr content
+#' @title Busca Cidades por Estado
+#' @description Busca cidades por estado.
+#' @importFrom purrr map_chr pluck
 #' @importFrom tibble tibble
-#' @importFrom dplyr select
-#' @importFrom dplyr mutate
+#' @importFrom httr GET add_headers content
 #' @param estado sigla do estado (acronym of the state).
-#' @param cidade \code{character}. Nome da cidade, por exemplo, \code{"Salvador"}. (Name of the city.)
 #' @param token Token de autorização. Veja <http://cepaberto.com/users/register>.
 #' @examples
 #' \dontrun{
-#' ubatuba <- busca_cidade(estado = "SP", cidade = "Ubatuba", token = token)
+#' ubatuba <- busca_cidades(estado = "AM", token = token)
 #' }
 #' @export
-busca_cidade <- function(estado = c("AC", "AL", "AP", "AM", "BA", "CE",
+busca_cidades <- function(estado = c("AC", "AL", "AP", "AM", "BA", "CE",
                                     "DF", "ES", "GO", "MA", "MT", "MS",
                                     "MG", "PA", "PB", "PR", "PE", "PI",
                                     "RJ", "RN", "RS", "RO", "RR", "SC",
-                                    "SP", "SE", "TO"),
-                         cidade = "", token = NULL){
+                                    "SP", "SE", "TO"), token = NULL){
 
   estado <- match.arg(estado, choices = c("AC", "AL", "AP", "AM", "BA", "CE",
                                           "DF", "ES", "GO", "MA", "MT", "MS",
@@ -31,13 +25,14 @@ busca_cidade <- function(estado = c("AC", "AL", "AP", "AM", "BA", "CE",
     stop("Um token \u00e9 preciso")
   }
 
-  if(nchar(cidade) == 0){
-    stop("Cidade \u00e9 preciso")
-  } else{
-    url <- paste0(base_url, "address?", "estado=", estado, "&cidade=", cidade)
-  }
+  url <- paste0(base_url, "cities?estado=", estado)
   auth <- paste0("Token token=", token)
   r <- GET(url, add_headers(Authorization = auth)) %>% content("parsed")
+  cities <- tibble(
+    estado = estado,
+    cidade = map_chr(r, ~{pluck(.x, "nome", .default = NA_character_)})
+  )
 
+  return(cities)
 }
 

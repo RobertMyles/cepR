@@ -1,8 +1,6 @@
 #' @title Busca Bairros por Latitude e Longitude
 #' @description Busca bairros por latitude e longitude.
-#' @importFrom purrr pluck
 #' @importFrom httr GET add_headers content
-#' @importFrom tibble tibble
 #' @param lat \code{numerico}. Latitude
 #' @param long \code{numerico}. Longitude.
 #' @param token Token de autorização. Veja <http://cepaberto.com/users/register>

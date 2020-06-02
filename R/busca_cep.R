@@ -1,7 +1,6 @@
 #' @title Busca por CEP
 #' @description Busca por CEP (search for information by postal code).
 #' @importFrom httr GET add_headers content
-#' @importFrom tibble tibble
 #' @param cep CEP (postal code), \code{character}.
 #' @param token Token de autorização. Veja <http://cepaberto.com/users/register>.
 #' @export

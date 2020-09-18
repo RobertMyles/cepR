@@ -1,6 +1,7 @@
 # v 0.1.2
 
-This version adds a new `busca_multi()` function. 
+- This version adds a new `busca_multi()` function. 
+- URLs in README have been updated.
 
 ## Test environments
 * local OS X install, R 4.0.0

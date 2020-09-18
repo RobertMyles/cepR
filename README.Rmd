@@ -12,10 +12,10 @@ knitr::opts_chunk$set(
 )
 ```
 
-[![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/RobertMyles/cepR?branch=master&svg=true)](https://ci.appveyor.com/project/RobertMyles/cepR) 
 [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/cepR)](https://cran.r-project.org/package=cepR)
 [![CRAN_Download_Badge](http://cranlogs.r-pkg.org/badges/cepR)](https://CRAN.R-project.org/package=cepR)
-[![CRAN_Download_Badge](http://cranlogs.r-pkg.org/badges/grand-total/cepR)](https://CRAN.R-project.org/package=cepR)  
+[![CRAN_Download_Badge](http://cranlogs.r-pkg.org/badges/grand-total/cepR)](https://CRAN.R-project.org/package=cepR)
+![R-CMD-check](https://github.com/RobertMyles/cepR/workflows/R/badge.svg)
 
 # cepR `r emo::ji("brazil")`   
 <a href=#uk>(English below)</a>

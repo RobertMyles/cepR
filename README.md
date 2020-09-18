@@ -15,14 +15,15 @@ cepR 🇧🇷
 dados postais do Brasil tais como nomes de bairros, cidades, estados,
 logradouros, CEPs e outras informações de interesse como altitude,
 longitude e latitude. Os dados são do projeto
-[CEPaberto](http://cepaberto.com/) e para utilizar este pacote é preciso
-se cadastrar no site do [CEPaberto](http://cepaberto.com/users/register)
-e obter um *token* pessoal. Você pode contribuir para o projeto
-CEPaberto clicando na aba [“Colaborar”](http://cepaberto.com/ceps) do
-site. Para instalar o **cepR** é só seguir as instruções abaixo. Um
-banco de dados com endereços postais do estado de São Paulo está
-incluído no pacote e pode ser acessado com `data("sp")`. Sugestões,
-*pull requests* e comentários são muito bem-vindos!
+[CEPaberto](https://cepaberto.com/) e para utilizar este pacote é
+preciso se cadastrar no site do
+[CEPaberto](https://cepaberto.com/users/register) e obter um *token*
+pessoal. Você pode contribuir para o projeto CEPaberto clicando na aba
+[“Colaborar”](http://cepaberto.com/ceps) do site. Para instalar o
+**cepR** é só seguir as instruções abaixo. Um banco de dados com
+endereços postais do estado de São Paulo está incluído no pacote e pode
+ser acessado com `data("sp")`. Sugestões, *pull requests* e comentários
+são muito bem-vindos!
 
 Instalação
 ----------
@@ -81,11 +82,11 @@ Para mais, veja o projeto CEPAberto.
 **cepR** is a package for accessing Brazilian address data:
 neighbourhood names, city and state names, actual addresses, postal
 codes, and other info such as altitude, longitude & latitude. The data
-come from the [CEPaberto](http://cepaberto.com/) project, and to use the
-package, you’ll need a personal access token from the CEP Aberto site.
-Suggestions, pull requests, criticisms all welcome. You can install the
-package as shown in *Instalação* above. If you use it regularly, please
-consider donating to the CEPAberto project.
+come from the [CEPaberto](https://cepaberto.com/) project, and to use
+the package, you’ll need a personal access token from the CEP Aberto
+site. Suggestions, pull requests, criticisms all welcome. You can
+install the package as shown in *Instalação* above. If you use it
+regularly, please consider donating to the CEPAberto project.
 
 The package is aimed at a Brazilian audience, so if you don’t speak
 Portuguese:

@@ -1,4 +1,22 @@
-# v 1.0.1
+# v 0.1.2
+
+This version adds a new `busca_multi()` function. 
+
+## Test environments
+* local OS X install, R 4.0.0
+* Fedora Linux, R-devel (R-hub)
+* Ubuntu Linux 16.04 LTS, R-release (R-hub)
+* Windows Server 2008 R2 SP1, R-devel (R-hub)
+* win-builder (devel and release)
+* OS X with R 4.0.0, 3.6.0, 3.5.0 on GitHub actions.
+
+── R CMD check results ──────────────────────────────────────────────────── cepR 0.1.2 ────
+Duration: 33.6s
+
+0 errors ✓ | 0 warnings ✓ | 0 notes ✓
+
+
+# v 0.1.1
 
 Updated to a new API version; removed package data as this is easily available from the new API version.
 

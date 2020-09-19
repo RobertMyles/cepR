@@ -20,7 +20,7 @@ knitr::opts_chunk$set(
 # cepR `r emo::ji("brazil")`   
 <a href=#uk>(English below)</a>
 
-**cepR** é um pacote para [R](https://www.r-project.org/) que acessa dados postais do Brasil tais como nomes de bairros, cidades, estados, logradouros, CEPs e outras informações de interesse como altitude, longitude e latitude. Os dados são do projeto [CEPaberto](https://cepaberto.com/) e para utilizar este pacote é preciso se cadastrar no site do [CEPaberto](https://cepaberto.com/users/register) e obter um *token* pessoal. Você pode contribuir para o projeto CEPaberto clicando na aba ["Colaborar"](http://cepaberto.com/ceps) do site. Para instalar o **cepR** é só seguir as instruções abaixo. Um banco de dados com endereços postais do estado de São Paulo está incluído no pacote e pode ser acessado com `data("sp")`. Sugestões, *pull requests* e comentários são muito bem-vindos!
+**cepR** é um pacote para [R](https://www.r-project.org/) que acessa dados postais do Brasil tais como nomes de bairros, cidades, estados, logradouros, CEPs e outras informações de interesse como altitude, longitude e latitude. Os dados são do projeto [CEPaberto](https://cepaberto.com/) e para utilizar este pacote é preciso se cadastrar no site do [CEPaberto](https://cepaberto.com/users/register) e obter um *token* pessoal. Você pode contribuir para o projeto CEPaberto clicando na aba ["Colaborar"](https://cepaberto.com/ceps) do site. Para instalar o **cepR** é só seguir as instruções abaixo. Um banco de dados com endereços postais do estado de São Paulo está incluído no pacote e pode ser acessado com `data("sp")`. Sugestões, *pull requests* e comentários são muito bem-vindos!
 
 ## Instalação
 
@@ -74,7 +74,7 @@ Pode-se também buscar os endereços por CEP. Por exemplo, o valor *default* do 
 #   cod_IBGE <chr>
 ```
 
-Também é possível buscar por múltiplos CEPs. É **importante** atentar para o limite de 1 pesquisa por segundo por token, portanto pesquisas com muitos itens podem demorar bastante. O valor *default* dos CEPs da função busca_multi são ambos na Praça da Sé
+Também é possível buscar por múltiplos CEPs. É **importante** atentar para o limite de 1 pesquisa por segundo por token, portanto pesquisas com muitos itens podem demorar bastante. O valor *default* dos CEPs da função busca_multi são ambos na Praça da Sé: 
 
 ```{r, eval = FALSE}
 > busca_multi(token = token)

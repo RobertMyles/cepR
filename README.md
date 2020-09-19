@@ -19,7 +19,7 @@ longitude e latitude. Os dados são do projeto
 preciso se cadastrar no site do
 [CEPaberto](https://cepaberto.com/users/register) e obter um *token*
 pessoal. Você pode contribuir para o projeto CEPaberto clicando na aba
-[“Colaborar”](http://cepaberto.com/ceps) do site. Para instalar o
+[“Colaborar”](https://cepaberto.com/ceps) do site. Para instalar o
 **cepR** é só seguir as instruções abaixo. Um banco de dados com
 endereços postais do estado de São Paulo está incluído no pacote e pode
 ser acessado com `data("sp")`. Sugestões, *pull requests* e comentários
@@ -63,7 +63,7 @@ Uso
     # ... with 853 more rows
 
 Pode-se também buscar os endereços por CEP. Por exemplo, o valor
-*default* do CEP é o da Praça de Sé:
+*default* do CEP é o da Praça da Sé:
 
     > busca_cep(token = token)
 
@@ -73,6 +73,18 @@ Pode-se também buscar os endereços por CEP. Por exemplo, o valor
     1     SP São Paulo     Sé 01001000 Praça da Sé, lado ímpar -23.5479099981
     # ... with 4 more variables: longitude <chr>, altitude <chr>, ddd <chr>,
     #   cod_IBGE <chr>
+
+Também é possível buscar por múltiplos CEPs. É **importante** atentar
+para o limite de 1 pesquisa por segundo por token, portanto pesquisas
+com muitos itens podem demorar bastante. O valor *default* dos CEPs da
+função busca\_multi são ambos na Praça da Sé:
+
+    > busca_multi(token = token)
+    # A tibble: 2 x 10
+      estado cidade    bairro cep      logradouro  latitude longitude altitude   ddd cod_IBGE
+      <chr>  <chr>     <chr>  <chr>    <chr>          <dbl>     <dbl>    <dbl> <dbl> <chr>   
+    1 SP     São Paulo Sé     01001000 Praça da Sé    -23.5     -46.6      760    11 3550308 
+    2 SP     São Paulo Sé     01001001 Praça da Sé    -23.5     -46.6      760    11 3550308 
 
 Para mais, veja o projeto CEPAberto.
 
